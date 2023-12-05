@@ -78,9 +78,9 @@ const userSchema = new mongoose.Schema({
         required: true,
       },
       stack: [
-        {
-          stackStr: { type: String, required: true },
-        },
+        
+         { type: String, required: true },
+        
       ],
       github: {
         type: String,
