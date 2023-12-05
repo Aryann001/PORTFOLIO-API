@@ -241,18 +241,11 @@ export const updateStack = catchAsyncError(async (req, res, next) => {
         url: result.secure_url,
       });
     }
-    req.body.stack = stackLinkArr;
-  }
 
-  user = await User.findByIdAndUpdate(
-    req.user._id,
-    { techStack: req.body.stack },
-    {
-      new: true,
-      runValidators: true,
-      useFindAndModify: false,
-    }
-  );
+    user.techStack = stackLinkArr;
+
+    await user.save({ suppressWarning: true });
+  }
 
   sendCookie(res, user, 200);
 });
