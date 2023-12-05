@@ -301,6 +301,8 @@ export const createProject = catchAsyncError(async (req, res, next) => {
 
   let stack = [];
 
+  req.body.stack = JSON.parse(req.body.stack);
+
   if (typeof req.body.stack === "string") {
     stack.push(req.body.stack);
   } else {
