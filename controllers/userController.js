@@ -309,11 +309,13 @@ export const createProject = catchAsyncError(async (req, res, next) => {
 
   let stackArr = [];
 
-  for (let i = 0; i < stack.length; i++) {
-    stackArr.push({
-      stackStr: stack[i],
-    });
-  }
+  // for (let i = 0; i < stack.length; i++) {
+  //   stackArr.push({
+  //     stackStr: stack[i],
+  //   });
+  // }
+
+  stackArr = stack;
 
   project.stack = stackArr;
 
