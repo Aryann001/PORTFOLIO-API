@@ -377,6 +377,8 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
 
   let stack = [];
 
+  req.body.stack = JSON.parse(req.body.stack);
+
   if (typeof req.body.stack === "string") {
     stack.push(req.body.stack);
   } else {
@@ -385,11 +387,7 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
 
   let stackArr = [];
 
-  for (let i = 0; i < stack.length; i++) {
-    stackArr.push({
-      stackStr: stack[i],
-    });
-  }
+  stackArr = stack;
 
   projectData.stack = stackArr;
 
