@@ -411,7 +411,7 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
   project.github = projectData.github;
   project.projectLink = projectData.projectLink;
 
-  await project.save({ suppressWarning: true });
+  await user.save({ suppressWarning: true });
 
   sendCookie(res, user, 200);
 });
