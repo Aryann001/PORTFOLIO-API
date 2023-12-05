@@ -389,7 +389,7 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
 
   stackArr = stack;
 
-  projectData.stack = stackArr;
+  project.stack = stackArr;
 
   if (req.body.image !== undefined) {
     await cloudinary.v2.uploader.destroy(project.image.public_id);
@@ -410,7 +410,6 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
   project.description = projectData.description;
   project.github = projectData.github;
   project.projectLink = projectData.projectLink;
-  project.stack = projectData.stack;
 
   await project.save({ suppressWarning: true });
 
