@@ -297,6 +297,7 @@ export const createProject = catchAsyncError(async (req, res, next) => {
     description: req.body.description,
     github: req.body.github,
     projectLink: req.body.projectLink,
+    date: req.body.date,
   };
 
   let stack = [];
@@ -373,6 +374,7 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
     description: req.body.description,
     github: req.body.github,
     projectLink: req.body.projectLink,
+    date: req.body.date,
   };
 
   let stack = [];
@@ -410,6 +412,7 @@ export const updateProject = catchAsyncError(async (req, res, next) => {
   project.description = projectData.description;
   project.github = projectData.github;
   project.projectLink = projectData.projectLink;
+  project.date = projectData.date;
 
   await user.save({ suppressWarning: true });
 
