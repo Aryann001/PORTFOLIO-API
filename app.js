@@ -16,11 +16,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(fileUpload());
 app.use(
-  cors({
-    origin: process.env.FRONTEND_URI,
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-  })
+  cors(
+    // {
+    //   origin: process.env.FRONTEND_URI,
+    //   credentials: true,
+    //   methods: ["GET", "POST", "PUT", "DELETE"],
+    // }
+  )
 );
 
 import UserRoute from "./routes/userRoute.js";
