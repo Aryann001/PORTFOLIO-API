@@ -17,11 +17,11 @@ app.use(cookieParser());
 app.use(fileUpload());
 app.use(
   cors(
-    // {
-    //   origin: process.env.FRONTEND_URI,
-    //   credentials: true,
-    //   methods: ["GET", "POST", "PUT", "DELETE"],
-    // }
+    {
+      // origin: process.env.FRONTEND_URI,
+      credentials: true,
+      methods: ["GET", "POST", "PUT", "DELETE"],
+    }
   )
 );
 
